@@ -16,7 +16,7 @@
 // the payment function is called after the exexcution of createorder
 
 // const promise = createOrder(cart);
-//promise will be like and object {data:undefined}
+//promise will be like an object {data:undefined}
 
 //promise will call it only once and we will have control over our  program with us rather  then to other function
 // promise.then(function(orderid){
@@ -108,6 +108,40 @@
 // Promise.all([p1,p2,p3])
 // p1-3s p2-2s p3-1s
 // so after 3 s we will get [val1,val2,val3]
+// Create three promises that resolve after different times
+// const promise1 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve('First promise resolved after 1 second');
+//     }, 1000);
+// });
+
+// const promise2 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve('Second promise resolved after 2 seconds');
+//     }, 2000);
+// });
+
+// const promise3 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve('Third promise resolved after 3 seconds');
+//     }, 3000);
+// });
+
+// // Use Promise.all to run the promises in parallel
+// Promise.all([promise1, promise2, promise3])
+//     .then((messages) => {
+//         console.log('All promises resolved:');
+//         messages.forEach((message, index) => {
+//             console.log(`Promise ${index + 1}: ${message}`);
+//         });
+//     })
+//     .catch((error) => {
+//         console.error('One of the promises rejected:', error);
+//     });
+// Promise.all is extremely useful when you need to perform multiple asynchronous operations and wait for all of them to complete before proceeding. For example:
+
+// Fetching Multiple Resources: You might need to fetch data from multiple APIs and use the results together.
+// Performing Batch Operations: You may want to perform several independent operations concurrently and continue only when all have finished.
 
 // lets take an example where all were successful in diff interval 
 // it returns an array of results of all three calls with value of all these results
@@ -186,3 +220,13 @@
 // or handlePromise().catch((err)=> console.log(err))
 
 // async await removes the need of too much promise chaining like .then .then
+
+// Advantages of Async/Await
+
+// Improved Readability: Async/await syntax makes asynchronous code look more like synchronous code, reducing complexity and improving readability.
+// Simplified Error Handling: Using try/catch blocks with async/await allows for more straightforward and centralized error handling compared to chaining .then() and .catch().
+// Maintainability: The linear flow of async/await makes the code more maintainable and easier to debug.
+// Use Cases for Async/Await
+
+// Complex Asynchronous Workflows: When dealing with complex workflows that involve multiple asynchronous operations, async/await simplifies the logic and makes the code more intuitive.
+// API Calls: Async/await is particularly useful for making sequential API calls where each call depends on the result of the previous one.
